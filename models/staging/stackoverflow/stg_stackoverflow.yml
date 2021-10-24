@@ -3,10 +3,16 @@ version: 2
 
 models:
     - name: stg_stackoverflow__stackoverflow_posts
-      description: "A starter dbt model"
+      description: "Staging of stackoverflow_posts table."
       columns:
           - name: id
             description: "The primary key for this table"
             tests:
                 - unique
                 - not_null
+         - name: answer_count
+           description: "Test for unanswered questions."
+           tests:
+           - accepted_values:
+             values: [0]
+             quote: false
