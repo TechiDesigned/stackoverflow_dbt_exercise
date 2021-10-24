@@ -2,8 +2,8 @@
 version: 2
 
 models:
-    - name: stg_so__stackoverflow_posts
-      description: "Staging of stackoverflow_posts table."
+    - name: stg_so__posts_questions
+      description: "Staging of posts_questions table."
       columns:
           - name: id
             description: "The primary key for this table"

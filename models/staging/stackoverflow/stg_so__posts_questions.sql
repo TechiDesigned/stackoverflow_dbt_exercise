@@ -8,7 +8,7 @@ else answer_count
 end as answer_count,
 comment_count,	
 community_owned_date,
-creation_date,
+cast(creation_date as date) as creation_date,
 favorite_count,
 last_activity_date,	
 last_edit_date,
@@ -21,5 +21,5 @@ post_type_id,
 score,
 tags,	
 view_count
-from bigquery-public-data.stackoverflow.stackoverflow_posts
+from {{ source('stackoverflow','posts_questions') }}
 where answer_count = 0 or answer_count is null

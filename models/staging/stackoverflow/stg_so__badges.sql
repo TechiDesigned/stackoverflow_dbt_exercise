@@ -1,7 +1,7 @@
 select
 id,	
 name,	
-date,	
+cast(date as date) as date,	
 user_id,		
 tag_based
-from bigquery-public-data.stackoverflow.badges
+from {{ source('stackoverflow','badges') }}
