@@ -4,7 +4,8 @@ title,
 body,	
 accepted_answer_id,
 case when answer_count is null then 0 
-else answer_count end as answer_count,
+else answer_count 
+end as answer_count,
 comment_count,	
 community_owned_date,
 creation_date,

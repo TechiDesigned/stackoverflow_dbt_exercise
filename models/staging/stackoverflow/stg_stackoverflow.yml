@@ -2,7 +2,7 @@
 version: 2
 
 models:
-    - name: stg_stackoverflow__stackoverflow_posts
+    - name: stg_so__stackoverflow_posts
       description: "Staging of stackoverflow_posts table."
       columns:
           - name: id
@@ -10,9 +10,36 @@ models:
             tests:
                 - unique
                 - not_null
-         - name: answer_count
-           description: "Test for unanswered questions."
-           tests:
-           - accepted_values:
-             values: [0]
-             quote: false
+          - name: answer_count
+            description: "Test for unanswered questions."
+            tests:
+              - accepted_values:
+                  values: [0]
+                  quote: false
+
+    - name: stg_so__comments
+      description: "Staging of comments table."
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: stg_so__votes
+      description: "Staging of votes table."
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: stg_so__badges
+      description: "Staging of badges table."
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
