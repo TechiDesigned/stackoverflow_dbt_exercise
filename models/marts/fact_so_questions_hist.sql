@@ -1,7 +1,9 @@
 
+-- This model incrementally stores the comment and vote history for posts
+
 {{
     config(
-        materialized='incremental', incremental_strategy='insert_overwrite'
+        materialized='incremental'
     )
 }}
 
@@ -10,7 +12,7 @@ with fact_so_questions_spine as (
         from {{ ref('fact_so_questions_spine') }}
     {% if is_incremental () %}
     -- this filter will only be applied on an incremental run
-    where full_date > (Select max(fulll_date) from {{ this }})
+    where full_date > (Select max(full_date) from {{ this }})
     {% endif %}
 )
 select *

@@ -1,3 +1,6 @@
+-- This model sums the counts of votes and comments per day per post.
+-- A record is only created if it's the day the post was created or if 
+-- the post recieves 1 or more comments or votes on a given day
 
 {{
     config(

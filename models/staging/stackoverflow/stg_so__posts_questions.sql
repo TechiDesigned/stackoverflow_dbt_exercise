@@ -22,4 +22,3 @@ score,
 tags,	
 view_count
 from {{ source('stackoverflow','posts_questions') }}
-where answer_count = 0 or answer_count is null

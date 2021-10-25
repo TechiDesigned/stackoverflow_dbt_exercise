@@ -3,22 +3,16 @@ version: 2
 
 models:
     - name: stg_so__posts_questions
-      description: "Staging of posts_questions table with answered questions filtered out."
+      description: "Staging of posts_questions."
       columns:
           - name: id
             description: "The primary key for this table"
             tests:
                 - unique
                 - not_null
-          - name: answer_count
-            description: "Test for unanswered questions."
-            tests:
-              - accepted_values:
-                  values: [0]
-                  quote: false
 
     - name: stg_so__comments
-      description: "Staging of comments table with comments from answered questions filtered out."
+      description: "Staging of comments table."
       columns:
           - name: id
             description: "The primary key for this table"
@@ -30,7 +24,7 @@ models:
       description: "Staging of votes table."
       columns:
           - name: id
-            description: "The primary key for this table with votes from answered questions filtered out."
+            description: "The primary key for this table."
             tests:
                 - unique
                 - not_null
