@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+ - name: stackoverflow
+   description: "A clone of the Stackoverflow application database."
+   database: bigquery-public-data
+   tables:
+     - name: posts_questions
+       description: "Raw post questions data."
+       columns:
+         - name: id
+           tests:
+             - unique
+             - not_null   
+     - name: comments
+       description: "Raw comments data."
+       columns:
+         - name: id
+           tests:
+             - unique
+             - not_null 
+     - name: votes
+       description: "Raw votes data."
+       columns:
+         - name: id
+           tests:
+             - unique
+             - not_null
