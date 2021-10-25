@@ -25,11 +25,4 @@ sources:
          - name: id
            tests:
              - unique
-             - not_null 
-     - name: badges
-       description: "Raw badges data."
-       columns:
-         - name: id
-           tests:
-             - unique
-             - not_null 
+             - not_null

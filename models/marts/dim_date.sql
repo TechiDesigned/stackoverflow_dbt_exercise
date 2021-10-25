@@ -8,7 +8,10 @@ WITH DATE_SPINE AS
   -}}
 )
 SELECT
-CAST(DATE_DAY AS DATE) AS DATE_KEY
+{{ dbt_utils.surrogate_key(
+    'DATE_DAY'
+) }} as date_id,
+CAST(DATE_DAY AS DATE) AS full_date
 FROM DATE_SPINE
 
 

@@ -3,7 +3,7 @@ version: 2
 
 models:
     - name: stg_so__posts_questions
-      description: "Staging of posts_questions table."
+      description: "Staging of posts_questions table with answered questions filtered out."
       columns:
           - name: id
             description: "The primary key for this table"
@@ -18,7 +18,7 @@ models:
                   quote: false
 
     - name: stg_so__comments
-      description: "Staging of comments table."
+      description: "Staging of comments table with comments from answered questions filtered out."
       columns:
           - name: id
             description: "The primary key for this table"
@@ -30,16 +30,7 @@ models:
       description: "Staging of votes table."
       columns:
           - name: id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null
-
-    - name: stg_so__badges
-      description: "Staging of badges table."
-      columns:
-          - name: id
-            description: "The primary key for this table"
+            description: "The primary key for this table with votes from answered questions filtered out."
             tests:
                 - unique
                 - not_null
